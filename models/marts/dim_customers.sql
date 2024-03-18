@@ -1,5 +1,9 @@
+{{
+    config(materialized='table')
+}}
+
 select 
-    customerkey
+    customerkey,
     customer_name,
     customer_address,
     customer_phone,

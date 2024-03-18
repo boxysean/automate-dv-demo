@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: >
+      A dimensional model of all the customers in our databases. It brings together the
+      most important attributes used in common analyses across the organization.
+    columns:
+      - name: customerkey
+        description: Customer primary key, as known from source system
+        tests:
+          - unique
+          - not_null
+      - name: customer_name
+        description: Customer company name
+      - name: customer_address
+        description: Customer billing address (not shipping address -- see other column)
+      - name: customer_phone
+        description: Primary phone number provided for handling general inquiries
+      - name: customer_accbal
+        description: Latest account balance recorded in our systems
+      - name: customer_mktsegment
+        description: The area of industry the customer operates within
+        tests:
+          - accepted_values:
+              values:
+                - "FURNITURE"
+                - "HOUSEHOLD"
+                - "MACHINERY"
+
