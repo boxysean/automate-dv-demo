@@ -24,6 +24,8 @@ vars:
 
 models:
   dbtvault_snowflake_demo:
+    marts:
+      +materialized: table
     raw_stage:
       +materialized: view
       +tags:
